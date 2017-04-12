@@ -1,0 +1,12 @@
+Reason for the system I developed to classify Gina vs Non-gina texts: 
+
+The original features given by the assignment themselves are fairly good and it gives me a baseline accuracy of 0.509658246657. 
+
+1 -> POS Tag Features
+2 -> Universal POS Tag Features
+3 -> Named Entity Features
+4 -> Dependency Relations Features
+5 -> Syntactic Production Features
+6 -> Brown Cluster Identities
+
+The 6 original features focus very heavily on the clustering of words in each corpus (evident from the POS tag, Universal tag derived by POS, NER tag and Brown Cluster). These features are already very great, but I think the missing ingredient is somehow to capture the pattern of word use by the author, which suggests things like average word length, average sentence length, number of 'hard' words (defined as words longer than 13 characters,...). This brings me back to recycling the features I had for the readability assignment, which include most of the things I have mentioned above plus some metrics for measuring reading difficulty and reading level. I was also thinking about measing word association across each corpus with bigram and PPMI, plus tf-idf, but due to time constraint I was not able to. But to sum up, I think that by developing features to capture the pattern of word use by the author, which is evident in group of words that usually appear together (i.e LM and syntactic features), the system for authorship attribution would be more efficient. 
